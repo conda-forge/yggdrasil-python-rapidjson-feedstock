@@ -1,6 +1,6 @@
 context:
   name: "yggdrasil-python-rapidjson"
-  version: "1.23.0.0"
+  version: "1.23.0.1"
 
 package:
   name: ${{ name|lower }}
@@ -8,18 +8,18 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/yggdrasil_python_rapidjson-${{ version }}.tar.gz
-  sha256: cb2363c76de75e030a0563704eb83e9c89b75f20451b7439ba12a73965e9e1e7
+  sha256: f5d659e61ac5efd0a16fd8405961b69f7a6e89d4c39e1d16658cf03e84ee1860
 
 build:
   number: 1
   script:
     - if: unix
       then:
-        - 'CMAKE_GENERATOR="Ninja" ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --config-settings=cmake.define.RAPIDJSON_INCLUDE_DIRS=rapidjson/include'
+        - 'CMAKE_GENERATOR="Ninja" ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
     - if: win
       then:
         - 'set "SKBUILD_CMAKE_ARGS=-G Ninja"'
-        - '${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --config-settings=cmake.define.RAPIDJSON_INCLUDE_DIRS=rapidjson/include'
+        - '${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   build:
@@ -53,7 +53,7 @@ tests:
       - pytest -sv tests
     requirements:
       run:
-        - pandas <3.0.0
+        - pandas
         - pytest
         - pytz
         - trimesh
@@ -61,7 +61,6 @@ tests:
     files:
       source:
         - tests/
-        - rapidjson/test/example_python.py
 
 about:
   homepage: https://github.com/cropsinsilico/yggdrasil-python-rapidjson
@@ -74,7 +73,7 @@ about:
     A Python wrapper around YggdrasilRapidJSON. YggdrasilRapidJSON is a
     header-only C++ library for JSON operation extended for use with
     yggdrasil
-  documentation: https://cropsinsilico.github.io/yggdrasil-python-rapidjson/
+  documentation: https://cropsinsilico.github.io/yggdrasil-python-rapidjson
 
 extra:
   recipe-maintainers:
