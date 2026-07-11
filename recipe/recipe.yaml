@@ -11,7 +11,7 @@ source:
   sha256: 8a0fbd3e9ea0cd12279aebc8f3089362d14e4a7e3f0dbecbd807a534720aba7c
 
 build:
-  number: 0
+  number: 1
   script:
     - if: unix
       then:
@@ -60,8 +60,8 @@ tests:
         - unyt
     files:
       source:
-      - tests/
-      - rapidjson/test/example_python.py
+        - tests/
+        - rapidjson/test/example_python.py
 
 about:
   homepage: https://github.com/cropsinsilico/yggdrasil-python-rapidjson
