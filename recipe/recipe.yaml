@@ -1,6 +1,6 @@
 context:
   name: "yggdrasil-python-rapidjson"
-  version: "1.21.0.0"
+  version: "1.23.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/yggdrasil_python_rapidjson-${{ version }}.tar.gz
-  sha256: 8a0fbd3e9ea0cd12279aebc8f3089362d14e4a7e3f0dbecbd807a534720aba7c
+  sha256: cb2363c76de75e030a0563704eb83e9c89b75f20451b7439ba12a73965e9e1e7
 
 build:
   number: 0
@@ -60,8 +60,8 @@ tests:
         - unyt
     files:
       source:
-      - tests/
-      - rapidjson/test/example_python.py
+        - tests/
+        - rapidjson/test/example_python.py
 
 about:
   homepage: https://github.com/cropsinsilico/yggdrasil-python-rapidjson
