@@ -11,7 +11,7 @@ Summary: A Python wrapper around YggdrasilRapidJSON.
 
 Development: https://github.com/cropsinsilico/yggdrasil-python-rapidjson
 
-Documentation: https://cropsinsilico.github.io/yggdrasil-python-rapidjson/
+Documentation: https://cropsinsilico.github.io/yggdrasil-python-rapidjson
 
 A Python wrapper around YggdrasilRapidJSON. YggdrasilRapidJSON is a
 header-only C++ library for JSON operation extended for use with
